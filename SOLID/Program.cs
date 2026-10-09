@@ -11,10 +11,13 @@
                 MaxNumber = 100
             };
 
+            var validation = new GameSettingsValidator();
+            validation.Validate(settings);
+
             //INumberGenerator numberGenerator = new RandomNumberGenerator();
-            INumberGenerator numberGenerator = new FixedNumberGenerator(150);
-            IInputReader inputReader = new ConsoleInputReader();
+            INumberGenerator numberGenerator = new FixedNumberGenerator(42);
             IOutputWriter writer = new ConsoleOutputWriter();
+            IInputReader inputReader = new ConsoleInputReader(writer);
 
             var game = new GuessNumberGame(settings,
                                            numberGenerator,

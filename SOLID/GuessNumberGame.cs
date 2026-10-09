@@ -8,12 +8,12 @@
         private readonly IOutputWriter _outputWriter;
 
         public GuessNumberGame(GameSettings gameSettings,
-                               INumberGenerator randomNumberGenerator,
+                               INumberGenerator numberGenerator,
                                IInputReader inputReader,
                                IOutputWriter outputWriter)
         {
             _gameSettings = gameSettings;
-            _numberGenerator = randomNumberGenerator;
+            _numberGenerator = numberGenerator;
             _inputReader = inputReader;
             _outputWriter = outputWriter;
         }
